@@ -6,10 +6,12 @@ import BookItem from './BookItem';
 class BookShelves extends Component {
   static propTypes = {
     books: PropTypes.array.isRequired,
+    moveBook: PropTypes.func.isRequired,
   };
 
   render() {
     const { books } = this.props;
+    const { moveBook } = this.props;
     let currentlyReading = books.filter(book => book.shelf === 'currentlyReading');
     let wantToRead = books.filter(book => book.shelf === 'wantToRead');
     let read = books.filter(book => book.shelf === 'read');
@@ -28,7 +30,8 @@ class BookShelves extends Component {
                   {currentlyReading.map((book) => (
                     <BookItem
                       key={book.id}
-                      book={book}/>
+                      book={book}
+                      moveBook={moveBook}/>
                   ))}
                 </ol>
               </div>
@@ -40,7 +43,8 @@ class BookShelves extends Component {
                   {wantToRead.map((book) => (
                     <BookItem
                       key={book.id}
-                      book={book}/>
+                      book={book}
+                      moveBook={moveBook}/>
                   ))}
                 </ol>
               </div>
@@ -52,7 +56,8 @@ class BookShelves extends Component {
                   {read.map((book) => (
                     <BookItem
                       key={book.id}
-                      book={book}/>
+                      book={book}
+                      moveBook={moveBook}/>
                   ))}
                 </ol>
               </div>
