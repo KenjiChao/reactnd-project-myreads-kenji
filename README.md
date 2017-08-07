@@ -8,6 +8,14 @@ This is the my reads project developed by Kenji Chao.
 
 `npm start` or `yarn start`
 
+## Screenshots
+
+### Main Page
+![main_page](https://raw.githubusercontent.com/KenjiChao/reactnd-project-myreads-kenji/master/main.png)
+
+### Search Page
+![search_page](https://raw.githubusercontent.com/KenjiChao/reactnd-project-myreads-kenji/master/search.png)
+
 ## Backend Server
 
 The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods to perform necessary operations on the backend:
