@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Component for rendering a book list
+ */
 class BookItem extends Component {
   static propTypes = {
     book: PropTypes.object.isRequired,
@@ -31,6 +34,7 @@ class BookItem extends Component {
             </div>
           </div>
           <div className="book-title">{book.title}</div>
+          {/* Use short-circuit operator because book.authors might be undefined */}
           <div className="book-authors">{book.authors && book.authors.join(', ')}</div>
         </div>
       </li>

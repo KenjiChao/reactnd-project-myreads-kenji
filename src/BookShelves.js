@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import BookItem from './BookItem';
 
+/**
+ * Component for Main Page
+ */
 class BookShelves extends Component {
   static propTypes = {
     books: PropTypes.array.isRequired,
@@ -12,6 +15,8 @@ class BookShelves extends Component {
   render() {
     const { books } = this.props;
     const { onBookShelfChanged } = this.props;
+
+    // Filter books for different shelves.
     let currentlyReading = books.filter(book => book.shelf === 'currentlyReading');
     let wantToRead = books.filter(book => book.shelf === 'wantToRead');
     let read = books.filter(book => book.shelf === 'read');

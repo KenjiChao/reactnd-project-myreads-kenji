@@ -4,6 +4,9 @@ import * as BooksAPI from './BooksAPI';
 import BookItem from './BookItem';
 import PropTypes from 'prop-types';
 
+/**
+ * Component for Search Page
+ */
 class Search extends Component {
   static propTypes = {
     books: PropTypes.array.isRequired,
@@ -15,12 +18,19 @@ class Search extends Component {
     results: [],
   };
 
+  /**
+   * Update the shelf of the book and the current state, then invoke onBookShelfChanged of the root component.
+   * @param event onChange event when a book is moved between shelves
+   * @param book book object to update
+   */
   changeBookShelf = (event, book) => {
     book.shelf = event.target.value;
     this.setState({ results: this.state.results });
     this.props.onBookShelfChanged(event, book);
   };
 
+
+  // Update query state, get and modify query results, then set results state.
   updateQuery = (query) => {
     this.setState({ query: query });
     // Only send server request when query string is not empty
