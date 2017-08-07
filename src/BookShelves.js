@@ -6,12 +6,12 @@ import BookItem from './BookItem';
 class BookShelves extends Component {
   static propTypes = {
     books: PropTypes.array.isRequired,
-    moveBook: PropTypes.func.isRequired,
+    onBookShelfChanged: PropTypes.func.isRequired,
   };
 
   render() {
     const { books } = this.props;
-    const { moveBook } = this.props;
+    const { onBookShelfChanged } = this.props;
     let currentlyReading = books.filter(book => book.shelf === 'currentlyReading');
     let wantToRead = books.filter(book => book.shelf === 'wantToRead');
     let read = books.filter(book => book.shelf === 'read');
@@ -31,7 +31,7 @@ class BookShelves extends Component {
                     <BookItem
                       key={book.id}
                       book={book}
-                      moveBook={moveBook}/>
+                      onBookShelfChanged={onBookShelfChanged}/>
                   ))}
                 </ol>
               </div>
@@ -44,7 +44,7 @@ class BookShelves extends Component {
                     <BookItem
                       key={book.id}
                       book={book}
-                      moveBook={moveBook}/>
+                      onBookShelfChanged={onBookShelfChanged}/>
                   ))}
                 </ol>
               </div>
@@ -57,7 +57,7 @@ class BookShelves extends Component {
                     <BookItem
                       key={book.id}
                       book={book}
-                      moveBook={moveBook}/>
+                      onBookShelfChanged={onBookShelfChanged}/>
                   ))}
                 </ol>
               </div>

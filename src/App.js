@@ -16,7 +16,7 @@ class BooksApp extends React.Component {
     });
   }
 
-  moveBook = (event, book) => {
+  changeBookShelf = (event, book) => {
     book.shelf = event.target.value;
     this.setState(state => ({
       books: state.books.filter((b) => b.id !== book.id).concat([book]),
@@ -31,11 +31,14 @@ class BooksApp extends React.Component {
         <Route exact path="/" render={() => (
           <BookShelves
             books={this.state.books}
-            moveBook={this.moveBook}
+            onBookShelfChanged={this.changeBookShelf}
           />
         )}/>
         <Route exact path="/search" render={() => (
-          <Search/>
+          <Search
+            books={this.state.books}
+            onBookShelfChanged={this.changeBookShelf}
+          />
         )}/>
       </div>
     );
