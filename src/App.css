@@ -3,6 +3,7 @@ html, body, .root {
 }
 body {
   line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
 }
 body, .app {
   background: white;
@@ -12,7 +13,7 @@ body, .app {
 
 .list-books-title {
   padding: 10px 0;
-  background: #2e7c31;
+  background: #FF5722;
   text-align: center;
 }
 .list-books-title h1 {
@@ -53,7 +54,7 @@ body, .app {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #2e7d32;
+  background: #FF9800;
   background-image: url('./icons/add.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -147,7 +148,7 @@ body, .app {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #60ac5d;
+  background: #FF9800;
   background-image: url('./icons/arrow-drop-down.svg');
   background-repeat: no-repeat;
   background-position: center;
